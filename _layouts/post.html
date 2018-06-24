@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date: "%Y-%m-%d %H:%M" }}" class="post-meta__date date">{{ page.date | date: "%-d %b %Y" }}</time>
+      <br/>
+      {% if page.category %}
+        <span class="post-meta__tags">Category: <a href="{{ site.baseurl }}/categories/#{{ tag }}">{{ page.category }}</a></span>
+        <br/>
+      {% endif %}
+      {% if page.tags.size > 0 %}
+        <span class="post-meta__tags">Tags:
+          {% assign i = 0 %}
+          {% for tag in page.tags %}
+            {% assign i = i | plus:1 %}
+            <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>
+            {% if i != page.tags.size %}
+            ,
+            {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <section class="post">
+    {{ content }}
+  </section>
+  {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
+</article>
+{% if page.comments != false %}{% include disqus.html %}{% endif %}
