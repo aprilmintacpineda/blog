@@ -4,7 +4,7 @@ description: 'Opinionated but not biased posts about variety of things.'
 url: 'https://aprilmintacpineda.github.io'
 baseurl: '/blog'
 google_analytics: 'UA-111722788-2'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 'aprilmintacpineda'
 
 author:
   name: 'April Mintac Pineda'
