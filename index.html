@@ -12,6 +12,20 @@ robots: noindex
         <p class="excerpt">{{ post.excerpt | strip_html }}&hellip;</p>
         <div class="post-list__meta">
             <time datetime="{{ post.date | date: "%Y-%m-%d %H:%M" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time>
+            {% if post.category.size > 0 %}
+              <br>
+              <span class="post-meta__tags">
+                Category:
+                {% assign i = 0 %}
+                {% for category in post.category %}
+                  {% assign i = i | plus:1 %}
+                  <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ category }}</a>
+                  {% if i != post.category.size %}
+                  ,
+                  {% endif %}
+                {% endfor %}
+              </span>
+            {% endif %}
             {% if post.tags.size > 0 %}
               <br>
               <span class="post-meta__tags">
@@ -20,7 +34,7 @@ robots: noindex
                 {% for tag in post.tags %}
                   {% assign i = i | plus:1 %}
                   <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>
-                  {% if i != page.tags.size %}
+                  {% if i != post.tags.size %}
                   ,
                   {% endif %}
                 {% endfor %}

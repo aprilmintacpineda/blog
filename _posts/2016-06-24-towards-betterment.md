@@ -1,8 +1,8 @@
 ---
 title: "Towards Betterment"
-date: 2016-01-08
-category: Realizations
-tags: Thoughts Mindset
+date: 2018-06-24
+category: ["Realizations"]
+tags: ["Thoughts", "Mindset"]
 ---
 
 I have identified that the decisions we (humans) make can be categorized into three.
